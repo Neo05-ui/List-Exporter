@@ -1,0 +1,52 @@
+{
+  "manifest_version": 3,
+  "name": "List Exporter",
+  "version": "2.1.0",
+  "description": "Extract your watchlist from Netflix, Prime, Disney+, Hotstar, AniWatch and Crunchyroll. Export to Notion, TXT, CSV or Markdown.",
+  "permissions": ["activeTab", "scripting", "storage", "tabs"],
+  "host_permissions": [
+    "https://www.netflix.com/*",
+    "https://www.primevideo.com/*",
+    "https://www.amazon.com/*",
+    "https://www.hotstar.com/*",
+    "https://www.disneyplus.com/*",
+    "https://aniwatch.to/*",
+    "https://aniwatchtv.to/*",
+    "https://aniwave.to/*",
+    "https://www.crunchyroll.com/*",
+    "https://api.notion.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "List Exporter",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["scrapers/*.js"],
+      "matches": [
+        "https://www.netflix.com/*",
+        "https://www.primevideo.com/*",
+        "https://www.amazon.com/*",
+        "https://www.hotstar.com/*",
+        "https://www.disneyplus.com/*",
+        "https://aniwatch.to/*",
+        "https://aniwatchtv.to/*",
+        "https://aniwave.to/*",
+        "https://www.crunchyroll.com/*"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
